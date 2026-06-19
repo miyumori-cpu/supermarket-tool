@@ -57,7 +57,7 @@ with st.sidebar:
     )
     min_ratio = st.slider(
         "最低割合（総店舗数に対する地域比率）",
-        min_value=0, max_value=100, value=40, step=5,
+        min_value=0, max_value=100, value=0, step=5,
         format="%d%%",
     )
 
