@@ -20,6 +20,23 @@ st.set_page_config(
     layout="wide",
 )
 
+# ── パスワード認証 ────────────────────────────────────────────────────────────
+PASSWORD = "kurashiru2026"
+
+if "authenticated" not in st.session_state:
+    st.session_state["authenticated"] = False
+
+if not st.session_state["authenticated"]:
+    st.title("🔒 ログイン")
+    pw = st.text_input("パスワードを入力してください", type="password")
+    if st.button("ログイン"):
+        if pw == PASSWORD:
+            st.session_state["authenticated"] = True
+            st.rerun()
+        else:
+            st.error("パスワードが違います")
+    st.stop()
+
 st.title("🛒 都道府県別デジタルチラシ導入企業")
 st.caption("都道府県を選択すると、その地域に集中している契約企業を表示します。")
 
