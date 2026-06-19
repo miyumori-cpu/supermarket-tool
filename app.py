@@ -21,7 +21,7 @@ st.set_page_config(
 )
 
 # ── パスワード認証 ────────────────────────────────────────────────────────────
-PASSWORD = "kurashiru2026"
+PASSWORD = st.secrets["password"]
 
 if "authenticated" not in st.session_state:
     st.session_state["authenticated"] = False
